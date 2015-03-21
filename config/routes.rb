@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get '/auth/:provider/callback', to: 'sessions#index'
+  get '/auth/:provider/callback', to: 'sessions#create'
 
   resources :tweets
 
-  root 'tweets#index'
+  root to: 'tweets#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,6 +5,9 @@
     <div class="header clearfix">
       <nav>
         <ul class="nav nav-pills pull-right">
+          <% if current_user %>
+          <li role="presentation">Signed in as <%= current_user.name %></li>
+          <% end %>
           <!-- Tweet button -->
           <li role="presentation">
           <a class="twitter-share-button" href="https://twitter.com/share" data-related="twitterdev" data-size="large" data-count="none">Tweet</a>
