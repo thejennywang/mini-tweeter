@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get '/auth/:provider/callback', to: 'sessions#index'
+
   resources :tweets
- 
-  root 'welcome#index'
+
+  root 'tweets#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
