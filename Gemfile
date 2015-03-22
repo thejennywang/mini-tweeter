@@ -14,9 +14,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'autoprefixer-rails'
+
 gem 'omniauth-twitter', '~>1.1.0'
 
-gem 'autoprefixer-rails'
+gem 'twitter', '~>5.13.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

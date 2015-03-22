@@ -1,50 +1,20 @@
-<!DOCTYPE html>
-<body>
-
-  <div class="container">
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <% if current_user %>
-          <li role="presentation">Signed in as <%= current_user.name %></li>
-          <% end %>
-          <!-- Tweet button -->
-          <li role="presentation">
-          <a class="twitter-share-button" href="https://twitter.com/share" data-related="twitterdev" data-size="large" data-count="none">Tweet</a>
-          <script>
-            window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-          </script>
-          </li>
-          <!-- Tweet button -->
-        </ul>
-      </nav>
-      <h3 class="text-muted">Tweeter on Rails</h3>
+<div class="panel panel-default panel-body">
+    <div class="profile">
+      <img src="https://pbs.twimg.com/profile_images/378800000091878872/277746bf9db136eb9c99dfcbdd9a4f90_bigger.jpeg">
     </div>
 
-    <!-- A Tweet -->
+    <div class="content">
+      <h3>
+        <a href="https://twitter.com/thejennywang">
+          thejennywang
+        </a>
+      </h3>
 
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <%= render partial: "tweet" %>
-      </div>
+      <h4>Tweet tweet! </h4>
+
     </div>
+</div>
 
-    <!-- End of Tweet -->
-
-    <footer class="footer">
-      <p>&copy; Jenny Wang 2015</p>
-    </footer>
-
-  </div> <!-- /container -->
-
-  <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
-
-  <script>
-    $(document).ready(function(){
-      $('#add_profile').on('submit',function(){
-
-      })
-    })
-  </script>
-
-</body>
+<div class="panel panel-default panel-body">
+    Tweet content here
+</div>
