@@ -1,14 +1,10 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :update]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
     @tweets = Tweet.all
-    respond_with(@tweets)
-  end
-
-  def show
     respond_with(@tweets)
   end
 
@@ -24,8 +20,20 @@ class TweetsController < ApplicationController
     respond_with(@tweet)
   end
 
+  def show
+    respond_with(@tweet)
+  end
+
+  def edit
+  end
+
   def update
     @tweet.update(tweet_params)
+    respond_with(@tweet)
+  end
+
+  def destroy
+    @tweet.destroy(tweet_params)    
     respond_with(@tweet)
   end
 

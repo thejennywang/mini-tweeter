@@ -6,7 +6,7 @@
     <div class="content">
       <h3>
         <a href="https://twitter.com/thejennywang">
-          thejennywang
+          @<%= current_user.name %>
         </a>
       </h3>
 
@@ -16,5 +16,13 @@
 </div>
 
 <div class="panel panel-default panel-body">
-    Tweet content here
+  <p><%= link_to 'New Tweet', new_tweet_path %></p>
+</div>
+
+<div class="panel panel-default panel-body">
+  <p>Tweet</p>
+</div>
+
+<div class="panel panel-default panel-body">
+  <p>Tweet</p>
 </div>
