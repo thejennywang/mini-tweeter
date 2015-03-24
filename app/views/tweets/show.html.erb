@@ -1,4 +1,6 @@
-<p>Tweet tweeted!</p> 
+<p>Your Tweet has been posted! 
+  <%= link_to "View it on Twitter→", current_user.url %>
+  </p> 
 <div class="panel panel-default panel-body">
-  <a href="https://twitter.com/thejennywang">@<%= current_user.name %></a>: <%= @tweet.body %>
+  <%= link_to "@#{current_user.name}", current_user.url %>: <%= @tweet.body %>
 </div>

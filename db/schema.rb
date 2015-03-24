@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323215907) do
+ActiveRecord::Schema.define(version: 20150324011230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "home_timelines", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "body"
@@ -27,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150323215907) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "url"
     t.string   "token"
     t.string   "secret"
     t.string   "image"

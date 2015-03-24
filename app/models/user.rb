@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
     user.update(
       name: auth_hash.info.nickname,
+      url: auth_hash.info.urls[:Twitter],
       image: auth_hash.info.image,
       token: auth_hash.credentials.token,
       secret: auth_hash.credentials.secret
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  # Getting a Ruby interface to the Twitter API
+  # Get Ruby interface to the Twitter API
   def twitter
     @client ||= Twitter::REST::Client.new do |config|
       config.consumer_key        = Rails.application.secrets.twitter_api_key
@@ -21,4 +22,9 @@ class User < ActiveRecord::Base
       config.access_token_secret = secret
     end
   end
+
+  def home_timeline
+    client.home_timeline
+  end
+
 end

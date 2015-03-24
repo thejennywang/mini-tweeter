@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="description" content="Simple Twitter app built on Rails">
     <meta name="author" content="Jenny Wang">
     <link rel="icon" href="https://abs.twimg.com/favicons/favicon.ico">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
 
     <title>★★Tweeter on Rails</title>
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <!-- Tweet button -->
-          <li>
-            <a class="twitter-share-button" href="https://twitter.com/share" data-related="twitterdev" data-size="large" data-count="none">Tweet</a>
-          </li>
-          <!-- Tweet button -->
-        </ul>
-      </nav>
-      <% if current_user %>
-          <h3 class="username-header">@<%= current_user.name %></h3>
-        <% else %>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <!-- Tweet button -->
+            <li>
+              <a class="twitter-share-button" href="https://twitter.com/share" data-related="twitterdev" data-size="large" data-count="none">Tweet</a>
+            </li>
+            <!-- Tweet button -->
+          </ul>
+        </nav>
           <h3 class="username-header">Mini Tweeter</h3>
-      <% end %>
-    </div>
+      </div>
 
-    
-        <%= yield %>
+      
+          <%= yield %>
 
-        <footer class="footer">
-          <p>&copy; Jenny Wang 2015</p>
-        </footer>
+          <footer class="footer">
+            <p>&copy; Jenny Wang 2015</p>
+          </footer>
 
-    </div>
-  </div> <!-- /container -->
+      </div>
+    </div> <!-- /container -->
 
-  <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
 
-</body>
+  </body>
 </html>
