@@ -1,31 +1,21 @@
 <% if current_user %>
-  <div class="panel panel-default panel-body">
+  <% current_user.timeline.each do |tweet| %>
+    <div class="panel panel-default panel-body">
       <div class="profile">
-        <%= image_tag current_user.image %>
-      </div>
-
-      <div class="content">
-        <h3>
-          <%= link_to "@#{current_user.name}", current_user.url %>
+        <h3><%= tweet.user.name %>
+          <img src="<%= tweet.user.profile_image_url %>"/>
         </h3>
-
-        <h4>Tweet tweet! </h4>
-
       </div>
-  </div>
-
-  <div class="panel panel-default panel-body">
-    <p><%= link_to 'New Tweet', new_tweet_path %></p>
-  </div>
-  
-  <div class="panel panel-default panel-body">
-    <p>Tweet</p>
-  </div>
+      <div class="tweet">
+       <%= tweet.text %>
+     </div>
+    </div>
+  <% end %>
 
 <% else %>
   <div class="jumbotron">
-      <h1>Let's get started</h1>
-      <p><a class="btn btn-primary btn-lg" href="/auth/twitter/" role="button">Connect to Twitter</a></p>
-    </div>
+    <h1>Let's get started</h1>
+    <p><a class="btn btn-primary btn-lg" href="/auth/twitter/" role="button">Connect to Twitter</a></p>
+</div>
 
 <% end %>

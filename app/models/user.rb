@@ -23,8 +23,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def home_timeline
-    client.home_timeline
+  def timeline
+    self.twitter.home_timeline(count: 5)
   end
 
 end
