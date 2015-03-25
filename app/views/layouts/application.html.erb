@@ -22,7 +22,9 @@
           <ul class="nav nav-pills pull-right">
             <!-- Tweet button -->
             <li>
-              <%= link_to "Tweet", new_tweet_path, class: "twitter-share-button" %>
+              <% if current_user %>
+                <%= link_to "Tweet", new_tweet_path, class: "btn-primary" %>
+                <% end %>
             </li>
             <!-- Tweet button -->
           </ul>
