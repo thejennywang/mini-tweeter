@@ -21,11 +21,11 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <!-- Tweet button -->
-            <li>
-              <% if current_user %>
+            <% if current_user %>
+              <li>
                 <%= link_to "Tweet", new_tweet_path, class: "btn-primary" %>
-                <% end %>
-            </li>
+              </li>
+            <% end %>
             <!-- Tweet button -->
           </ul>
         </nav>
